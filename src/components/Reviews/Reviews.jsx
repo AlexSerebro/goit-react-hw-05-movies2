@@ -22,7 +22,7 @@ export default function Reviews() {
         ) : (
           <ul className={s.rewiews}>
             {reviews.map(review => (
-              <li key={review.id} className={s.rewiews__item}>
+              <li key={review.id} className={s.item}>
                 <Review reviews={review} />
               </li>
             ))}
