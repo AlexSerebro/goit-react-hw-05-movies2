@@ -1,22 +1,22 @@
-.subMenu {
+.CastReviewMenu {
   margin-bottom: 15px;
   padding: 10px 0 10px 0;
   border-bottom: 1px solid #000;
 }
 
-.subMenu__list {
+.list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.subMenu__link {
+.link {
   color: #4863ff;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.03em;
 }
 
-.subMenu__link:hover {
+.link:hover {
   color: #3995ff;
 }

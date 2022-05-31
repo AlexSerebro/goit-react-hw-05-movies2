@@ -5,8 +5,7 @@ import { fetchMovieById } from '../services/api';
 import { useRef } from 'react';
 
 import MovieCard from '../components/MovieCard/MovieCard';
-
-import SubMenu from '../components/SubMenu/SubMenu';
+import {CastReviewMenu} from '../components/CastReviewMenu';
 
 const Cast = lazy(() =>
   import('../components/Cast/Cast' /* webpackChunkName: "Cast" */),
@@ -34,7 +33,7 @@ export default function MovieDetailsPage() {
             Go back
           </button>
           <MovieCard movie={movie} />
-          <SubMenu />
+          <CastReviewMenu />
           <Suspense fallback={<p>Loading</p>}>
             <Routes>
               <Route path="cast" element={<Cast />} />
