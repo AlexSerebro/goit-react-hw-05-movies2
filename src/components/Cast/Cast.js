@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { getMovieCast } from '../../services/api';
+import { fetchMovieCast } from '../../services/api';
 import ActorCard from './ActorCard/ActorCard';
 
 import s from './Cast.module.css';
@@ -10,7 +10,7 @@ export default function Cast() {
   const param = useParams();
 
   useEffect(() => {
-    getMovieCast(param.movieId).then(({ cast }) => setCast(cast));
+    fetchMovieCast(param.movieId).then(({ cast }) => setCast(cast));
   }, [param.movieId]);
 
   return (

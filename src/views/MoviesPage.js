@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getMovieByQuery } from '../services/api';
+import { fetchMovieByQuery } from '../services/api';
 import MoviesList from '../components/MoviesList/MoviesList';
 import MovieSearchForm from '../components/MovieSearchForm/MovieSearchForm';
 
@@ -12,7 +12,7 @@ export default function MoviesPage() {
   const urlQuery = new URLSearchParams(location.search).get('query');
 
   useEffect(() => {
-    getMovieByQuery(urlQuery).then(setMovies);
+    fetchMovieByQuery(urlQuery).then(setMovies);
   }, [urlQuery]);
 
   return (

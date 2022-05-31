@@ -3,11 +3,11 @@ import axios from 'axios';
 const movieDbApi = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
   params: {
-    api_key: '94f703750c3e0771d8c2babc592efc94',
+    api_key: '0bb2f17198bc606087f9a8f8273748b1',
   },
 });
 
-async function getTrendingMovies(page) {
+export async function fetchTrendingMovies(page) {
   const params = {
     page,
   };
@@ -17,13 +17,13 @@ async function getTrendingMovies(page) {
   return respons.data.results;
 }
 
-async function getMovieById(movieId) {
+export async function fetchMovieById(movieId) {
   const respons = await movieDbApi.get(`/movie/${movieId}`);
 
   return respons.data;
 }
 
-async function getMovieByQuery(query) {
+export async function fetchMovieByQuery(query) {
   if (!query) {
     return;
   }
@@ -37,22 +37,15 @@ async function getMovieByQuery(query) {
   return respons.data.results;
 }
 
-async function getMovieCast(movieId) {
+export async function fetchMovieCast(movieId) {
   const respons = await movieDbApi(`/movie/${movieId}/credits`);
 
   return respons.data;
 }
 
-async function getMovieRewiews(movieId) {
+export async function fetchMovieRewiews(movieId) {
   const respons = await movieDbApi(`/movie/${movieId}/reviews`);
 
   return respons.data.results;
 }
 
-export {
-  getTrendingMovies,
-  getMovieById,
-  getMovieCast,
-  getMovieRewiews,
-  getMovieByQuery,
-};

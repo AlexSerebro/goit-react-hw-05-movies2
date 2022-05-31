@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import { getMovieRewiews } from '../../services/api';
+import { fetchMovieRewiews } from '../../services/api';
 import Review from './Review/Review';
 
 import s from './Reviews.module.css';
@@ -11,7 +11,7 @@ export default function Reviews() {
   const param = useParams();
 
   useEffect(() => {
-    getMovieRewiews(param.movieId).then(r => setReviews(r));
+    fetchMovieRewiews(param.movieId).then(r => setReviews(r));
   }, [param.movieId]);
 
   return (

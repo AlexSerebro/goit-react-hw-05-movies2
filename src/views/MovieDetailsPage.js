@@ -1,13 +1,7 @@
-import {
-  useParams,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import {  useParams, Route, Routes, useLocation, useNavigate,} from 'react-router-dom';
 import { useState, useEffect, lazy, Suspense } from 'react';
 
-import { getMovieById } from '../services/api';
+import { fetchMovieById } from '../services/api';
 import { useRef } from 'react';
 
 import MovieCard from '../components/MovieCard/MovieCard';
@@ -29,7 +23,7 @@ export default function MovieDetailsPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getMovieById(params.movieId).then(r => setMovie(r));
+    fetchMovieById(params.movieId).then(r => setMovie(r));
   }, [params.movieId]);
 
   return (
