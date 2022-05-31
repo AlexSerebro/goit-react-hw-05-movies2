@@ -1,9 +1,9 @@
-.nav__list {
+.list {
   display: inline-flex;
   list-style: none;
 }
 
-.nav__link {
+.link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
@@ -12,12 +12,12 @@
   font-size: 18px;
 }
 
-.nav__link:hover {
+.link:hover {
   color: #3995ff;
 }
 
-.nav__link_active {
-  composes: nav__link;
+.link_active {
+  composes: link;
   color: #3995ff;
   text-decoration: underline;
 }
